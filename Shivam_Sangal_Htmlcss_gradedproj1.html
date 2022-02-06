@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link rel="stylesheet" href="Shivam_Sangal_Htmlcss_gradedproj1.css">
+</head>
+<body>
+
+<h3 class = "demo">Pharmacy</h3>
+<div class="navbar">
+
+  <a href="#home">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Our Medicines
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Fever</a>
+      <a href="#">Muscle Pains</a>
+      <a href="#">Cold and Cough</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Health Care
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Baby Care</a>
+      <a href="#">Skin Care</a>
+      <a href="#">Home Care</a>
+      <a href="#">Personal Care</a>
+      <a href="#">Pet Care</a>
+    </div>
+  </div> 
+  
+
+<a id="myPopup" class="popuptext" onclick="myFunction()">Lab Test</a>
+<div id="contact">Contact</div>
+
+<div id="contactForm">
+
+  <h1>Keep in touch!</h1>
+  <small>I'll get back to you as quickly as possible</small>
+  
+  <form action="#">
+    <input placeholder="Name" type="text" required />
+    <input placeholder="Email" type="email" required />
+    <input placeholder="Subject" type="text" required />
+    <textarea placeholder="Comment"></textarea>
+    <input class="formBtn" type="submit" />
+    <input class="formBtn" type="reset" />
+  </form>
+</div>
+
+ 
+</div>
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <img src="Images/Images/Animation/ani1.jpg" style="width:100%">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="Images/Images/Animation/ani2.jpg" style="width:100%">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="Images/Images/Animation/ani3.jpg" style="width:100%">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="Images/Images/Animation/ani4.jpg" style="width:100%">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="Images/Images/Animation/ani5.jpg" style="width:100%">
+  </div>
+  
+  </div>
+<div class = "footer-cls">@copyright. Only for demonstration purposes</div>
+
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+$(function() {
+  
+  // contact form animations
+  $('#contact').click(function() {
+    $('#contactForm').fadeToggle();
+  })
+  $(document).mouseup(function (e) {
+    var container = $("#contactForm");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        container.fadeOut();
+    }
+  });
+  
+});
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+
+
+</script>
+</body>
+
+</html>
